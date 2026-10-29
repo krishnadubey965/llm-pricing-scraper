@@ -1,0 +1,10 @@
+{
+    "$schema": "https://apify.com/schemas/v1/output.ide.json",
+    "actorOutputSchemaVersion": 1,
+    "title": "LLM Pricing Scraper output",
+    "properties": {
+        "results": { "type": "string", "title": "All rows", "description": "Models and provider endpoints.", "template": "{{links.apiDefaultDatasetUrl}}/items" },
+        "providers": { "type": "string", "title": "Provider comparison", "description": "Per-provider prices, uptime and latency.", "template": "{{links.apiDefaultDatasetUrl}}/items?view=providers" },
+        "csv": { "type": "string", "title": "Download as CSV", "description": "The same rows as a spreadsheet.", "template": "{{links.apiDefaultDatasetUrl}}/items?format=csv" }
+    }
+}

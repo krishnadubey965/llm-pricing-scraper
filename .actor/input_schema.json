@@ -1,0 +1,50 @@
+{
+    "$schema": "https://apify.com/schemas/v1/input.ide.json",
+    "title": "LLM Pricing Scraper",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "models": {
+            "title": "Models",
+            "type": "array",
+            "description": "Model ids or parts of them, for example 'anthropic/claude' or 'gpt-5'. Leave empty to collect the whole OpenRouter catalogue.",
+            "editor": "stringList",
+            "prefill": ["anthropic/claude", "openai/gpt-5"]
+        },
+        "includeProviderBreakdown": {
+            "title": "Include per-provider prices",
+            "type": "boolean",
+            "description": "For each model, also collect every provider serving it, with that provider's own price, uptime, latency and throughput. This is one extra request per model.",
+            "default": true
+        },
+        "maxBreakdownModels": {
+            "title": "Max models for the breakdown",
+            "type": "integer",
+            "description": "How many models to fetch provider details for, cheapest first. Keeps runs short when the catalogue is large.",
+            "default": 25,
+            "minimum": 0,
+            "unit": "models"
+        },
+        "includeOllama": {
+            "title": "Include Ollama library",
+            "type": "boolean",
+            "description": "Also list models from the Ollama library — these run on your own hardware, so their token price is zero.",
+            "default": false
+        },
+        "maxPricePerMillionInputUsd": {
+            "title": "Max input price (USD per million tokens)",
+            "type": "integer",
+            "description": "Drop models above this input price. Leave empty for no limit.",
+            "minimum": 0,
+            "unit": "USD / 1M tokens"
+        },
+        "maxItems": {
+            "title": "Max rows",
+            "type": "integer",
+            "description": "Stop after saving this many rows.",
+            "default": 1000,
+            "minimum": 1,
+            "unit": "rows"
+        }
+    }
+}

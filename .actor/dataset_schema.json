@@ -1,0 +1,284 @@
+{
+    "$schema": "https://apify.com/schemas/v1/dataset.ide.json",
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "type": {
+                "type": "string",
+                "description": "model, provider_endpoint or ollama_model."
+            },
+            "modelId": {
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "name": {
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "author": {
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "providerName": {
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "contextLength": {
+                "type": [
+                    "integer",
+                    "null"
+                ]
+            },
+            "inputPricePerMillionUsd": {
+                "type": [
+                    "number",
+                    "null"
+                ]
+            },
+            "outputPricePerMillionUsd": {
+                "type": [
+                    "number",
+                    "null"
+                ]
+            },
+            "cacheReadPricePerMillionUsd": {
+                "type": [
+                    "number",
+                    "null"
+                ]
+            },
+            "cacheWritePricePerMillionUsd": {
+                "type": [
+                    "number",
+                    "null"
+                ]
+            },
+            "webSearchPriceUsd": {
+                "type": [
+                    "number",
+                    "null"
+                ]
+            },
+            "isFree": {
+                "type": [
+                    "boolean",
+                    "null"
+                ]
+            },
+            "inputModalities": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "outputModalities": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "tokenizer": {
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "maxCompletionTokens": {
+                "type": [
+                    "integer",
+                    "null"
+                ]
+            },
+            "isModerated": {
+                "type": [
+                    "boolean",
+                    "null"
+                ]
+            },
+            "quantization": {
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "status": {
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "uptimeLast30m": {
+                "type": [
+                    "number",
+                    "null"
+                ]
+            },
+            "uptimeLast1d": {
+                "type": [
+                    "number",
+                    "null"
+                ]
+            },
+            "latencyMsLast30m": {
+                "type": [
+                    "number",
+                    "null"
+                ]
+            },
+            "throughputLast30m": {
+                "type": [
+                    "number",
+                    "null"
+                ]
+            },
+            "supportsTools": {
+                "type": [
+                    "boolean",
+                    "null"
+                ]
+            },
+            "createdAt": {
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "url": {
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "scrapedAt": {
+                "type": [
+                    "string",
+                    "null"
+                ]
+            },
+            "toolChoiceModes": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        "required": [
+            "type"
+        ]
+    },
+    "views": {
+        "overview": {
+            "title": "Models by price",
+            "transformation": {
+                "fields": [
+                    "type",
+                    "modelId",
+                    "name",
+                    "inputPricePerMillionUsd",
+                    "outputPricePerMillionUsd",
+                    "contextLength",
+                    "isFree",
+                    "url"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "type": {
+                        "label": "Type",
+                        "format": "text"
+                    },
+                    "modelId": {
+                        "label": "Model",
+                        "format": "text"
+                    },
+                    "name": {
+                        "label": "Name",
+                        "format": "text"
+                    },
+                    "inputPricePerMillionUsd": {
+                        "label": "$/1M in",
+                        "format": "number"
+                    },
+                    "outputPricePerMillionUsd": {
+                        "label": "$/1M out",
+                        "format": "number"
+                    },
+                    "contextLength": {
+                        "label": "Context",
+                        "format": "number"
+                    },
+                    "isFree": {
+                        "label": "Free",
+                        "format": "boolean"
+                    },
+                    "url": {
+                        "label": "Link",
+                        "format": "link"
+                    }
+                }
+            }
+        },
+        "providers": {
+            "title": "Provider comparison",
+            "transformation": {
+                "fields": [
+                    "modelId",
+                    "providerName",
+                    "inputPricePerMillionUsd",
+                    "outputPricePerMillionUsd",
+                    "uptimeLast1d",
+                    "latencyMsLast30m",
+                    "throughputLast30m",
+                    "quantization"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "modelId": {
+                        "label": "Model",
+                        "format": "text"
+                    },
+                    "providerName": {
+                        "label": "Provider",
+                        "format": "text"
+                    },
+                    "inputPricePerMillionUsd": {
+                        "label": "$/1M in",
+                        "format": "number"
+                    },
+                    "outputPricePerMillionUsd": {
+                        "label": "$/1M out",
+                        "format": "number"
+                    },
+                    "uptimeLast1d": {
+                        "label": "Uptime 1d",
+                        "format": "number"
+                    },
+                    "latencyMsLast30m": {
+                        "label": "Latency ms",
+                        "format": "number"
+                    },
+                    "throughputLast30m": {
+                        "label": "Tok/s",
+                        "format": "number"
+                    },
+                    "quantization": {
+                        "label": "Quant",
+                        "format": "text"
+                    }
+                }
+            }
+        }
+    }
+}
