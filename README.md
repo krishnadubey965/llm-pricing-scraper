@@ -1,8 +1,8 @@
-# LLM Pricing Scraper
+# LLM Pricing Scraper - OpenRouter AI Model & Token Costs
 
-Know what every model costs — and which provider serves it cheapest, fastest and most reliably.
+Know what every LLM API call costs — and which provider serves a model cheapest, fastest and most reliably.
 
-This Actor collects the full OpenRouter catalogue (450+ models) with prices converted to **USD per million tokens**, and then, for each model, every provider serving it with that provider's own price, uptime, latency and throughput.
+This Actor collects the full OpenRouter catalogue (450+ AI models, including GPT, Claude, Gemini and Llama) with prices converted to **USD per million tokens**, and then, for each model, every provider serving it with that provider's own price, uptime, latency and throughput.
 
 No API key needed.
 

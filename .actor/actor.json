@@ -2,8 +2,8 @@
     "$schema": "https://apify.com/schemas/v1/actor.ide.json",
     "actorSpecification": 1,
     "name": "llm-pricing-scraper",
-    "title": "LLM Pricing Scraper",
-    "description": "Compare LLM token prices across models and providers. OpenRouter catalogue with per-provider pricing, uptime, latency and throughput.",
+    "title": "LLM Pricing Scraper - OpenRouter AI Model & Token Costs",
+    "description": "Scrape LLM API pricing for 450+ AI models from OpenRouter: price per million input and output tokens, plus every provider serving each model with its own cost, uptime, latency and throughput. Covers GPT, Claude, Gemini, Llama and more. No API key needed.",
     "version": "0.0",
     "meta": {
         "templateId": "js-crawlee-cheerio",
